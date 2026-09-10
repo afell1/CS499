@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Botanical Club</h1>
+
+    <!-- Sections -->
+    <a href="#about">About Botanical Club</a> | <a href="#schedule">Club Information</a> | <a href="#join">Register for the Club</a> | <a href="#audio">Field Trip Video</a>
+
+    <!-- About the Club -->
+    <section id="about">
+        <!-- Heading -->
+        <h3>About Botanical Club</h3>
+        <!-- Description -->
+        <p>Botanical Club is an organization dedicated to bringing together students who are interested in studying, enjoying, and preserving plant life.</p>
+
+    </section>
+
+    <!-- Club Information -->
+    <section id="schedule">
+        <h3>Botanical Club Information</h3>
+        <!-- Table -->
+        <table border="1">
+            <caption>2026-27 Information</caption>
+            <tr>
+                <th colspan="3">Meeting Schedule</th>
+            </tr>
+            <tr>
+                <td colspan="3">Botanical Club meets every Monday at 3pm in the greenhouse</td>
+            </tr>
+            <tr>
+                <th>Membership Benefits</th>
+                <th>Club Events</th>
+                <th>Community Impact</th>
+            </tr>
+            <tr>
+                <td>Find people with shared interests</td>
+                <td>Visit local conservatories and nature reserves</td>
+                <td>Collaborate with local schools and nonprofits</td>
+            </tr>
+            <tr>
+                <td>Build leadership experience</td>
+                <td>Participate in campus botany experiments</td>
+                <td>Contribute to real research and data collection</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Join Information -->
+    <section id="join">
+        <h3>Register for Botanical Club</h3>
+        <!-- Registration Form -->
+        <form action="https://example.com/register" method="POST">
+            <fieldset>
+                <!-- Text Field -->
+                <p>
+                    <label for="first">First Name:</label>
+                    <input type="text" name="first" id="first">
+                </p>
+                <p>
+                    <label for="last">Last Name:</label>
+                    <input type="text" name="last" id="last">
+                </p>
+                <p>
+                    <label for="major">Major:</label>
+                    <input type="text" name="major" id="major">
+                </p>
+                <!-- Dropdown -->
+                <p>
+                    <label for="county">Current Year in School:</label>
+                            <select name="year">
+                                <option value="freshman">Freshman</option>
+                                <option value="sophomore">Sophomore</option>
+                                <option value="junior">Junior</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                </p>
+                <!-- Checkbox -->
+                <p>
+                    <label for="leadership">Interested in a leadership position? </label>
+                    <input type="checkbox" name="leadership" id="leadership">
+                </p>
+                <button>Submit</button>
+            </fieldset>
+        </form>
+
+    </section>
+
+    <!-- Club Audio/Video Player -->
+    <section id="audio">
+        <h3>Video Example of Potential Botanical Club Field Trip</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/r24O3mRDvz0?si=dYRLxfxtyU3dtHpl"></iframe>
+    </section>
+
+    <!-- Script -->
+    <script>
+        window.onload = function() {
+            alert("Welcome to the Botanical Club site! Please reach out to botanicalclub@example.edu with any questions :)");
+        };
+    </script>
+</body>
+</html>
