@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Form-Events Feedback Form</title>
+    <style>
+        .invalid { background-color: red; }
+    </style>
+</head>
+<body>
+    
+    <h1 id="title">Feedback Form</h1>
+    <form id="feedbackform">
+        <input type="text" id="name" placeholder="Name" required minlength="3" /><br /><br />
+        <input type="email" id="email" placeholder="Email" required /><br /><br />
+        <input type="number" id="rating" placeholder="Rating" required min="1" max="5"/><br /><br />
+        <textarea id="comments" placeholder="Comments"></textarea>
+        <p id="character">0 characters</p> <br /><br />
+        <button type="submit">Submit Feedback</button>
+        <p id="errorMsg"></p>
+    </form>
+
+    <ul id="summary"></ul>
+
+    <script>
+        // Input event - comments character counter
+        const charCounter = document.querySelector('#comments');
+        const character = document.querySelector('#character');
+
+        charCounter.addEventListener('input', () => {
+            character.textContent = `${charCounter.value.length} characters`;
+        });
+
+        // Validate rating 1-5
+        const rating = document.querySelector('#rating');
+        rating.addEventListener('input', () => {
+            if (rating.value < 1 || rating.value > 5) {
+                rating.classList.add('invalid');
+                // display error message
+                console.log("");
+            }
+            else {
+                rating.classList.remove('invalid');
+            }
+        })
+
+        // Form submit event
+        const form = document.querySelector('#feedbackform');
+        const name = document.querySelector('#name');
+        const list = document.querySelector('#summary');
+        const errorMsg = document.querySelector('#errorMsg');
+        
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            // validate rating
+            if (rating.value < 1 || rating.value > 5) {
+                // textContent error message - do not proceed
+                errorMsg.textContent = "Rating must be between 1 and 5.";
+                return;
+            }
+            else {
+                // create new list summarizing the submission
+                const item = document.createElement('li');
+                item.textContent = `${name.value} rated ${rating.value}/5: ${comments.value}   `;
+
+                const deleteItem = document.createElement('button'); // delete button
+                deleteItem.textContent = 'X';
+
+                item.appendChild(deleteItem);
+                list.appendChild(item);
+            }
+
+            errorMsg.textContent = "Feedback submitted.";
+        })
+
+        // Delete button / clickable X for each item in list - event delegation
+        list.addEventListener('click', (event) => {
+            if (event.target.matches('button')) {
+            event.target.parentElement.remove();
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
