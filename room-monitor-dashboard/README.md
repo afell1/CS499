@@ -25,3 +25,19 @@ Initial UI Sketch
 - Acceptable data ranges: The temperature and humidity ranges used to identify out-of-range readings.
 - Room identification: Room associated with each set of readings.
 - Timestamps: Date and time of each reading.
+
+## Live Prototype Link
+[View the SECS Room Condition Monitoring Dashboard](https://afell1.github.io/SECS-Room-Condition-Monitoring-Dashboard/)
+
+## Setup & Run Instructions
+1. Download or clone the project from GitHub.
+2. Open the project folder and terminal.
+3. Install the required dependencies: ```npm install```
+4. Start the application: ```npm run dev```
+5. Open the local URL provided in the terminal in your web browser.
+
+## Component Overview & Mock Data
+The prototype currently uses mock data stored in `data.js` to simulate sensor readings.
+
+- **readings:** Array of temperature and humidity readings. Each reading includes an ID, room, temperature (°F), relative humidity (%), and timestamp.
+- **rooms:** Array of monitored rooms used to populate the room selection dropdown.
